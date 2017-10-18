@@ -1,0 +1,5 @@
+<configuration
+xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/config">
+<wsdl  packageName="com.nareshit.service"
+ location="WebContent/WEB-INF/BookService.wsdl"/>
+</configuration>

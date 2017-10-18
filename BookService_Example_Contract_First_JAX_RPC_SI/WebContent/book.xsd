@@ -1,0 +1,11 @@
+<schema targetNamespace="http://domain.nareshit.com" xmlns="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+	<complexType name="book">
+		<sequence>
+			<element name="isbn" type="string" />
+			<element name="title" type="string" />
+			<element name="author" type="string" />
+			<element name="price" type="double" />
+		</sequence>
+	</complexType>
+</schema>

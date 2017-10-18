@@ -1,0 +1,11 @@
+<webServices version="1.0"
+xmlns="http://java.sun.com/xml/ns/jax-rpc/ri/dd">
+<endpoint name="BookService"
+wsdl="/WEB-INF/BookService.wsdl"
+model="/WEB-INF/model-rpc-enc.xml.gz"
+interface="com.nareshit.service.IBookService"
+implementation="com.nareshit.service.BookServiceImpl"
+/>
+<endpointMapping endpointName="BookService"
+urlPattern="/books"/>
+</webServices>

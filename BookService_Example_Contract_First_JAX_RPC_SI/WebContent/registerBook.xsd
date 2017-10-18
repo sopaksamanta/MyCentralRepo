@@ -1,0 +1,9 @@
+<schema targetNamespace="http://service.nareshit.com"
+xmlns="http://www.w3.org/2001/XMLSchema"
+xmlns:b="http://domain.nareshit.com">
+<import schemaLocation="book.xsd"
+namespace="http://domain.nareshit.com"/>
+<element name="book" type="b:book"/>
+<element name="registerBookReturn" 
+type="int"/>
+</schema>

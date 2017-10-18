@@ -1,0 +1,90 @@
+<wsdl:definitions xmlns:impl=
+"http://service.nareshit.com"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   targetNamespace="http://service.nareshit.com">
+  <wsdl:types>
+    <schema targetNamespace=
+    "http://service.nareshit.com"
+    xmlns="http://www.w3.org/2001/XMLSchema">
+    <include schemaLocation="searchBook.xsd"/>
+    <include schemaLocation="registerBook.xsd"/>
+    <include schemaLocation="updateBook.xsd"/>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="IBookService_SearchBook_Request">
+    <wsdl:part element="impl:isbn" name="isbn"/>
+  </wsdl:message>
+  <wsdl:message name="IBookService_SearchBook_Response">
+    <wsdl:part element="impl:searchBookReturn"
+     name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="IBookService_RegisterBook_Request">
+    <wsdl:part element="impl:book" name="book"/>
+  </wsdl:message>
+  <wsdl:message name="IBookService_RegisterBook_Response">
+    <wsdl:part element="impl:registerBookReturn"
+     name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="IBookService_UpdateBook_Request">
+    <wsdl:part element="impl:book1" name="book"/>
+  </wsdl:message>
+  <wsdl:message name="IBookService_UpdateBook_Response">
+    <wsdl:part element="impl:updateBookReturn"
+     name="parameters"/>
+  </wsdl:message>
+  
+  
+  <wsdl:portType name="IBookService">
+    <wsdl:operation name="searchBook" parameterOrder="isbn">
+      <wsdl:input message="impl:IBookService_SearchBook_Request"/>
+      <wsdl:output message="impl:IBookService_SearchBook_Response"/>
+    </wsdl:operation>
+    
+     <wsdl:operation name="registerBook" parameterOrder="book">
+      <wsdl:input message="impl:IBookService_RegisterBook_Request"/>
+      <wsdl:output message="impl:IBookService_RegisterBook_Response"/>
+    </wsdl:operation>
+     <wsdl:operation name="updateBook" parameterOrder="book">
+      <wsdl:input message="impl:IBookService_UpdateBook_Request"/>
+      <wsdl:output message="impl:IBookService_UpdateBook_Response"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BookServiceBinding" type="impl:IBookService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="searchBook">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerBook">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBook">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+  </wsdl:binding>
+  <wsdl:service name="BookService">
+    <wsdl:port binding="impl:BookServiceBinding" name="BookServicePort">
+      <soap:address location="http://localhost:8080/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
